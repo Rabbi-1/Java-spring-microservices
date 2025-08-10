@@ -4,9 +4,10 @@ import com.rabbi.patientservices.dto.PatientResponseDTO;
 import com.rabbi.patientservices.mapper.PatientMapper;
 import com.rabbi.patientservices.model.Patient;
 import com.rabbi.patientservices.repository.PatientRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class PatientService {
     private final PatientRepository patientRepository;
 
