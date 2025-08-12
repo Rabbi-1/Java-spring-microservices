@@ -29,6 +29,8 @@ public class PatientController {
         return ResponseEntity.ok().body(patientResponseDTO);
     }
 }
-//This PatientController class handles incoming HTTP requests for patient data.
-// Mapped to /patients, it defines a GET endpoint that retrieves all patients via PatientService.
-// The data is returned as a list of PatientResponseDTO objects wrapped in a ResponseEntity for proper HTTP response handling.
+//This PatientController class handles HTTP requests related to patient data.
+// Mapped to /patients, it provides:
+// - A GET endpoint to retrieve all patients via PatientService, returning a list of PatientResponseDTO objects.
+// - A POST endpoint to create a new patient, validating the request body (PatientRequestDTO),
+// saving it through PatientService, and returning the saved patient as a PatientResponseDTO.

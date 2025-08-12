@@ -2,6 +2,7 @@ package com.rabbi.patientservices.service;
 
 import com.rabbi.patientservices.dto.PatientRequestDTO;
 import com.rabbi.patientservices.dto.PatientResponseDTO;
+import com.rabbi.patientservices.exception.EmailAlreadyExistsException;
 import com.rabbi.patientservices.mapper.PatientMapper;
 import com.rabbi.patientservices.model.Patient;
 import com.rabbi.patientservices.repository.PatientRepository;
@@ -23,6 +24,11 @@ public class PatientService {
     }
 
     public PatientResponseDTO createPatient(PatientRequestDTO patientRequestDTO) {
+        if(patientRepository.existsByEmail(patientRequestDTO.getEmail())){
+            throw new EmailAlreadyExistsException("A patient with this email" +
+                    "already exists" + patientRequestDTO.getEmail());
+        }
+
         Patient newPatient = patientRepository.save(PatientMapper.toModel(patientRequestDTO));
         return PatientMapper.toDto(newPatient);
     }
