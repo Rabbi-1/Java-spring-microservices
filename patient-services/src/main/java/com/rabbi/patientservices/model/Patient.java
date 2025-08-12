@@ -39,5 +39,4 @@ public class Patient {
 //This patients entity class in a Spring Boot application represents patient records stored in the database.
 // It uses JPA annotations to define the patients table structure, with fields for patient ID, name, email, address, date of birth, and registration date.
 // The id field is automatically generated as a UUID, and the email field is validated for proper format and uniqueness.
-// Lombok's @Getter and @Setter annotations generate boilerplate getter and setter methods.
 // This class ensures that all required patient information is stored with validation rules to maintain data integrity.

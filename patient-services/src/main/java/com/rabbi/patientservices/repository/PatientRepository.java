@@ -10,6 +10,7 @@ import java.util.UUID;
 public interface PatientRepository extends JpaRepository<Patient, UUID> {
 
     boolean existsByEmail(String email);
+    boolean existsByEmailAndIdNot(String email, UUID id);
 }
 //This PatientRepository interface in a Spring Boot application provides data access operations for the Patient entity.
 // It extends JpaRepository, enabling built-in CRUD (Create, Read, Update, Delete) functionality and database query methods without manual SQL.

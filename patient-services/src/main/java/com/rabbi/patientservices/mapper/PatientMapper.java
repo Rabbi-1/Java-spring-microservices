@@ -28,5 +28,6 @@ public class PatientMapper {
         return patient;
     }
 }
-//This PatientMapper class converts a Patient entity into a PatientResponseDTO.
-// It extracts patient details and formats them as strings for API responses.
+//This `PatientMapper` class converts between `Patient` entities and DTOs.
+// - `toDto` maps a `Patient` entity to a `PatientResponseDTO` for API responses, formatting values as strings.
+// - `toModel` maps a `PatientRequestDTO` to a `Patient` entity for database storage
