@@ -8,7 +8,7 @@ import com.rabbi.patientservices.mapper.PatientMapper;
 import com.rabbi.patientservices.model.Patient;
 import com.rabbi.patientservices.repository.PatientRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
+
 
 import java.time.LocalDate;
 import java.util.List;
