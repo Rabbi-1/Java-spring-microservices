@@ -4,7 +4,6 @@ import com.rabbi.patientservices.dto.PatientRequestDTO;
 import com.rabbi.patientservices.dto.PatientResponseDTO;
 import com.rabbi.patientservices.dto.validators.CreatePatientValidationGroup;
 import com.rabbi.patientservices.service.PatientService;
-import jakarta.validation.Valid;
 import jakarta.validation.groups.Default;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
