@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Java-Spring-Microservices.iml" filepath="$PROJECT_DIR$/Java-Spring-Microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/patient-services/patient-services.iml" filepath="$PROJECT_DIR$/patient-services/patient-services.iml" />
     </modules>
   </component>
 </project>

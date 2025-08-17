@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "billing";
+
+service BillingService {
+  rpc CreateBillingAccount (BillingRequest) returns (BillingResponse);
+}
+
+message BillingRequest {
+  string patientId = 1;
+  string name = 2;
+  string email = 3;
+}
+
+message BillingResponse {
+  string accountId = 1;
+  string status = 2;
+}
+// This .proto file defines the gRPC service for creating billing accounts.
+// - Uses proto3 syntax with Java code generation options (multiple files under the "billing" package).
+// - BillingService exposes one RPC method: CreateBillingAccount.
+//    -> Input: BillingRequest (patientId, name, email).
+//    -> Output: BillingResponse (accountId, status).
+// - BillingRequest captures patient details required to open a billing account.
+// - BillingResponse returns a newly generated account ID and the status of the request.
+// This design allows secure, structured communication between microservices in a patient/billing system.
