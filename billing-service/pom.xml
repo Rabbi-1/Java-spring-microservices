@@ -64,6 +64,19 @@
             <version>6.0.53</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/net.devh/grpc-server-spring-boot-starter -->
+        <dependency>
+            <groupId>net.devh</groupId>
+            <artifactId>grpc-server-spring-boot-starter</artifactId>
+            <version>3.1.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>net.devh</groupId>
+            <artifactId>grpc-server-spring-boot-starter</artifactId>
+            <version>2.15.0.RELEASE</version>
+        </dependency>
+
+
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
