@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.Rabbi</groupId>
-    <artifactId>patient-services</artifactId>
+    <artifactId>patient-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>patient-services</name>
     <description>patient-services</description>
@@ -69,6 +69,7 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
+
 
         <dependency>
             <groupId>org.springdoc</groupId>
