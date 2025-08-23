@@ -1,10 +1,12 @@
 package com.rabbi.patientservices.kafka;
 
 import com.rabbi.patientservices.model.Patient;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import patient.events.PatientEvent;
 
+@Slf4j
 @Service
 public class KafkaProducer {
 
@@ -22,5 +24,10 @@ public class KafkaProducer {
                 .setEmail(patient.getEmail())
                 .setEventType("PATIENT_CREATED")
                 .build();
+        try {
+            kafkaTemplate.send("patient", event.toByteArray());
+        } catch (Exception e) {
+            log.error("Error sending PatientCreated even: {}", event);
+        }
     }
 }
