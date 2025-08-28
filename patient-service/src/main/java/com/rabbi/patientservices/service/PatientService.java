@@ -30,6 +30,7 @@ public class PatientService {
 
     public List<PatientResponseDTO> getPatients() {
         List<Patient> patients = patientRepository.findAll();
+
         return patients.stream().map(PatientMapper::toDto).toList();
     }
 
