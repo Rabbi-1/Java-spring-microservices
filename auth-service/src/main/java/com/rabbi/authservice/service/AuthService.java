@@ -1,7 +1,6 @@
 package com.rabbi.authservice.service;
 
 import com.rabbi.authservice.dto.LoginRequestDTO;
-import com.rabbi.authservice.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
