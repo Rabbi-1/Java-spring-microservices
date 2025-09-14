@@ -1,6 +1,8 @@
 package com.rabbi.authservice.service;
 
 import com.rabbi.authservice.dto.LoginRequestDTO;
+import com.rabbi.authservice.util.JwtUtil;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -8,9 +10,13 @@ import java.util.Optional;
 @Service
 public class AuthService {
     private final UserService userService;
+    private final PasswordEncoder passwordEncoder;
+    private final JwtUtil jwtUtil;
 
-    public AuthService (UserService userService) {
+    public AuthService (UserService userService, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
         this.userService = userService;
+        this.passwordEncoder = passwordEncoder;
+        this.jwtUtil = jwtUtil;
     }
     /*
     Find the user by email.
@@ -29,4 +35,3 @@ public class AuthService {
 
     }
 }
-//TODO: create password encoder 7,22,03
