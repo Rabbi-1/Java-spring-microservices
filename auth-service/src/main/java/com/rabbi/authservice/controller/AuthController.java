@@ -6,9 +6,7 @@ import com.rabbi.authservice.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -38,5 +36,28 @@ public class AuthController {
         String token = tokenOptional.get(); // from optional to actual token
         return ResponseEntity.ok(new LoginResponseDTO(token));
     }
+    // Marks this method as an OpenAPI operation with a short description
+    @Operation(summary = "Validate Token")
+
+    /*
+    Validate the provided token.
+    If the Authorization header is missing or does not start with "Bearer " → return UNAUTHORIZED.
+    Otherwise, strip the "Bearer " prefix and validate the token using authService.
+    If the token is valid → return OK.
+    If the token is invalid → return UNAUTHORIZED.
+    */
+    @GetMapping("/validate")
+    public ResponseEntity<Void> validateToken(
+            @RequestHeader("Authorization") String authHeader) {
+
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        return authService.validateToken(authHeader.substring(7))
+                ? ResponseEntity.ok().build()
+                : ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+    }
+
 }
 
