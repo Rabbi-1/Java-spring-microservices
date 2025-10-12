@@ -53,6 +53,7 @@ public class AuthController {
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+        System.out.println();
 
         return authService.validateToken(authHeader.substring(7))
                 ? ResponseEntity.ok().build()
